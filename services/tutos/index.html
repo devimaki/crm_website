@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutoriels</title>
+    <!-- Ajouter le lien vers Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        button {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barre de navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/index.html">IMAKI CRM</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">À propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/privacy/index.html">Conditions et Confidentialité</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+</nav>
+
+    <div class="container">
+        <h1 class="mt-5">Liste de Boutons</h1>
+
+        <input type="text" id="searchInput" class="form-control my-3" placeholder="Rechercher...">
+
+        <div id="buttonList">
+            <button class="btn btn-dark" onclick="buttonClick('link_facebook')">Appairer votre page FaceBook à Imaki</button><br>
+        </div>
+    </div>
+
+    <!-- Ajouter le lien vers Bootstrap JS et Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function buttonClick(buttonText) {
+            window.location.href = buttonText + ".html";
+        }
+
+        function filterButtons() {
+            var input, filter, buttonList, buttons, i;
+            input = document.getElementById('searchInput');
+            filter = input.value.toUpperCase();
+            buttonList = document.getElementById('buttonList');
+            buttons = buttonList.getElementsByTagName('button');
+
+            for (i = 0; i < buttons.length; i++) {
+                if (buttons[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    buttons[i].style.display = '';
+                } else {
+                    buttons[i].style.display = 'none';
+                }
+            }
+        }
+
+        // Attachez la fonction filterButtons à l'événement oninput de l'élément input
+        document.getElementById('searchInput').addEventListener('input', filterButtons);
+    </script>
+
+</body>
+</html>
