@@ -18,7 +18,7 @@
       width: auto;
       height: auto;
       z-index: -100;
-      background: url('stocks/speedometer.mp4') no-repeat;
+      background: url('data/cover.mp4') no-repeat;
       background-size: cover;
     }
     .content {
@@ -28,6 +28,39 @@
       text-align: center;
       padding: 100px 15px;
     }
+
+    .center_logo {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 20%;
+    }
+
+    .paladins {
+        font-family: Paladins;
+    }
+
+    .social-icon {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 32%;
+    }
+
+    .inter {
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+        font-variation-settings:
+            "slnt" 0;
+        }
+
+    body {
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+    }
+
   </style>
 
 <head>
@@ -36,13 +69,17 @@
     <title>IMAKI CRM</title>
     <!-- Inclure Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
 <!-- Barre de navigation -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-white bg-white">
     <div class="container">
-        <a class="navbar-brand" href="/index.html" style="font-family:Paladins">IMAKI CRM</a>
+        <a class="navbar-brand paladins" href="/index.html">IMAKI CRM</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -71,15 +108,39 @@
 
 <div class="container">
     <video autoplay muted loop id="video-background">
-        <source src="stocks/speedometer.mp4" type="video/mp4">
+        <source src="data/cover.mp4" type="video/mp4">
         Votre navigateur ne supporte pas les vidéos HTML5.
     </video>
-    <div class="container bg-light rounded p-5 m-5">
-        <h1 style="font-family: Paladins" class="text-center">Multidiffusion d'annonces automobiles</h1>
+    <div>
+        <img src="data/imaki.png" class="center_logo rounded mt-5">
+    </div>
+    <div class="text-center text-black">
+        <div class="container bg-white rounded p-5 m-5">
+            <h2>Multidiffusion d'annonces automobiles</h2>
+            <br>
+            <p>Avec IMAKI CRM, <b>automatisez</b> vos publications automobiles avec la puissance de <b>l'intelligence artificielle.</b></p>
+        </div>
+        <div class="container bg-white m-5 p-5 rounded">
+            <h2>Plateformes Automatisées</h2>
+            <br>
+            <div class="row social_logo">
+                <div class="col-6">
+                    <img src="data/icons/facebook.png" class="social-icon">
+                </div>
+                <div class="col-6">
+                    <img src="data/icons/instagram.png" class="social-icon">
+                </div>
+            </div>
+        </div>
+        <br><br><br><br>
+        <div class="container bg-white rounded p-2 m-5">
+            <h2>Toutes vos annonces, dans un seul outil</h2>
+        </div>
     </div>
 </div>
 
 <!-- Inclure Bootstrap JS (optionnel si vous n'utilisez pas les fonctionnalités JavaScript de Bootstrap) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
